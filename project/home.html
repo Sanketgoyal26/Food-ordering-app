@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    
+    <title>FoodZone</title>
+    
+
+    <script >
+
+
+
+
+        
+        var i = 0
+        var img1 = "linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('http://www.ctvisit.com/sites/default/files/valentinos%20pizza.jpg')"
+        img2 = "linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://wallpaperaccess.com/full/767277.jpg')"
+        img3 = "linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('pasta.jpg')"
+        img4 = "linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://www.ubackground.com/_ph/9/721542140.jpg')"
+        img5 = "linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images5.alphacoders.com/426/426029.jpg')"
+        img6 = "linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('oreo.png')"
+        function imgchg() {
+            i = (i % 6) + 1
+            if (i == 1) {
+                document.getElementById("head1").style.backgroundImage = img1
+            }
+            else if (i == 2) {
+                document.getElementById("head1").style.backgroundImage = img2
+            }
+            else if (i == 3) {
+                document.getElementById("head1").style.backgroundImage = img3
+            }
+            else if (i == 4) {
+                document.getElementById("head1").style.backgroundImage = img4
+            }
+            else if (i == 5) {
+                document.getElementById("head1").style.backgroundImage = img5
+            }
+            else {
+                document.getElementById("head1").style.backgroundImage = img6
+            }
+        }
+        setInterval(imgchg, 3000)
+
+
+   
+        
+
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+
+        }
+        .navbar-fixed-top.scrolled {
+  background-color: #fff !important;
+  transition: background-color 200ms linear;
+}
+
+        .header {
+            height: 750px;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding-top: 20px;
+            text-align: center;
+            color: white;
+        }
+        .login-btn {
+            width: 100px;
+            padding: 8px 0;
+            outline: none !important;
+            border: 2px solid white;
+            border-radius: 50px;
+            background: transparent;
+            color: white;
+            float: right;
+        }
+
+        .one {
+            padding: 340px 0 0 0;
+        }
+
+        .input-group {
+            width: 90%;
+            max-width: 500px;
+            border-radius: 50px;
+            background-color: white;
+            margin: auto;
+            padding: 2px;
+        }
+
+        .form-control {
+            border: 0 !important;
+            border-radius: 30px !important;
+            margin: 2px;
+            box-shadow: none !important;
+        }
+
+        .input-group-text {
+            width: 100px;
+            background-image: linear-gradient(#00ff7e, #1f3d90);
+            border: 0 !important;
+            color: white !important;
+            padding: 0 25px !important;
+            border-radius: 30px !important;
+            box-shadow: none !important;
+        }
+
+        .features {
+            padding: 100px 0;
+        }
+
+        .feature-img img {
+            width: 100%;
+        }
+
+        .ratings {
+            color: gold;
+        }
+
+        .price {
+            color: tomato;
+            padding: 7px;
+            font-size: 20px;
+        }
+        .price2 {
+            color: white;
+            padding: 7px;
+            font-size: 20px;
+        }
+        .summary {
+            color: grey;
+            padding: 15px
+        }
+
+        .placename {
+            color: grey;
+            font-family: cursive;
+            padding: 15px;
+        }
+        .foodname {
+            color: white;
+            font-family: cursive;
+            padding: 15px;
+        }
+        .feature-box {
+            box-shadow: 0 0 10px 1px rgba(37, 73, 214, 0.18);
+            margin-bottom: 50px;
+        }
+
+        .feature-box:hover {
+            transform: scale(1.1);
+            transition: 1s;
+        }
+
+        .gallery {
+            padding: 100px 0;
+            background-color: lightgray;
+        }
+
+        .gallery-box img {
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 1s;
+        }
+
+        .gallery-box img:hover {
+            transform: scale(1.1);
+        }
+
+        .gallery-box h4 {
+            font-weight: 600;
+            width: 200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+
+        .gallery-box {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .banner {
+            height: 750px;
+            background-image: url('bg_3.jpg');
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            padding-top: 13%;
+        }
+
+       
+
+        .book-btn {
+            width: 130px;
+            padding: 8px 0;
+            outline: none !important;
+            border: 2px solid white;
+            border-radius: 50px;
+            background: transparent;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .users-feedback {
+            padding: 100px 0;
+        }
+
+        .users-review {
+            text-align: center;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 100, 0.2);
+            padding-bottom: 50px;
+        }
+
+        .users-review p {
+            padding: 50px 10px 10px 10px;
+        }
+
+        .users-feedback img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            position: relative;
+            margin: -30px 0 20px 40%;
+        }
+
+        .users-review p::before {
+            content: '\201d';
+            display: block;
+            position: absolute;
+            font-size: 100px;
+            color: cornflowerblue;
+            font-family: sans-serif;
+            left: 44%;
+            top: -20px;
+        }
+
+        .txt1 {
+            animation: text 5s 1;
+        }
+
+        .txt2 {
+            animation: tex 3s 1;
+        }
+        .oline{
+            animation: online 3s 1;
+        }
+
+        @keyframes online{
+            0%{
+                color: transparent;
+            }
+            
+        }
+
+        @keyframes tex {
+            0% {
+                color: white;
+                letter-spacing: 15px;
+            }
+        }
+
+        @keyframes text {
+            0% {
+                color: transparent;
+                margin-bottom: -40px;
+                ;
+            }
+
+            30% {
+                color: transparent;
+                letter-spacing: 25px;
+                margin-bottom: -40px;
+                ;
+            }
+
+            85% {
+                /* color: transparent; */
+                letter-spacing: 30px;
+                margin-bottom: -40px;
+            }
+        }
+        .book-btn:hover{
+            transition: 1s;
+            transform: scale(1.2);
+        }
+        .aboutus {
+            padding: 100px;
+            height: 500px;
+            background-color: black;
+        }
+
+        .info {
+            padding: 35px 35px 35px 35px;
+            margin: 5px 35px 35px 35px;
+
+            box-sizing: border-box;
+            /* width: 50%; */
+
+            height: 350px;
+            float: left;
+
+        }
+
+        .gtch {
+            padding: 35px 35px 35px 35px;
+            margin: 5px 35px 35px 35px;
+            box-sizing: border-box;
+
+            width: 30%;
+            height: 350px;
+            float: right;
+        }
+
+        .uselik {
+            padding: 35px 35px 35px 35px;
+            margin: 5px 35px 35px 35px;
+            width: 25%;
+            height: 350px;
+            float: right;
+        }
+
+        .social a:hover {
+            transform: scale(1.5);
+        }
+
+        .navbar-nav a {
+            font-family: poppins;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .navbar-light .navbar-brand {
+            color: #fff;
+            font-size: 25px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover {
+            color: red;
+            transition: 1s;
+        }
+        .navbar-light .navbar-nav .prosection ul li a:hover {
+            color: turquoise;
+            transition: 1s;
+        }
+        .navbar-nav {
+            text-align: center;
+        }
+
+        .nav-link {
+            padding: .2rem 1rem;
+        }
+
+        .w-100 {
+            height: 100vh;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .navbar-nav.ml-auto {
+                background: rgba(0, 0, 0, 0.5);
+            }
+
+            .navbar-toggler {
+                padding: 1px 5px;
+                font-size: 18px;
+                line-height: 0.3;
+                background: #fff;
+            }
+        }
+      
+
+        .prosection{
+            display: none;
+         
+        }
+       
+        .navbar-collapse ul li:hover .prosection{
+            display: block;
+                background-color:transparent;
+                position:sticky;
+                margin-top: 5px;
+                margin-left: -15px;
+                color: white;
+              
+                
+                
+                
+
+        }
+
+        ::selection{
+            color: white;
+            background-color: red;
+        }
+
+        .navbar-collapse ul li:hover .prosection ul{
+           display: block;
+           position: absolute;
+          
+        }
+
+        .navbar-collapse ul li:hover .prosection ul li{
+            width: 100px;
+                padding:4px;
+                text-align: center;
+                background: transparent;
+                border-radius:20px;
+
+        }
+
+        .anima1 {
+            width: 100%;
+            position: relative;
+            display: block;
+            height: 500px;
+
+        }
+
+        .anima1 span {
+            font-size: 35px;
+            position: absolute;
+            margin-left: 30%;
+            font-family: cursive;
+            padding-top: 35px;
+            color: #515151;
+            font-style: bold;
+            font-weight: 600;
+        }
+
+        #st1 {
+            font-size: 30px;
+            position: absolute;
+            font-family: sans-serif;
+            color: #E24425;
+            font-style: italic;
+            margin-top: 20px;
+            margin-left: 41%;
+        }
+
+        .lin1 {
+            position: absolute;
+            display: block;
+            margin-top: 45px;
+            margin-left: 270px;
+            width: 260px;
+            border-top: 2px dotted black;
+        }
+
+        .lin2 {
+            width: 260px;
+            border-top: 2px dotted black;
+            color: green;
+            position: absolute;
+            margin-left: 950px;
+            margin-top: 45px;
+            animation: slideOut 2s forwards;
+            animation-timing-function: ease-out;
+        }
+
+        .imgs {
+
+            width: 70%;
+            height: 250px;
+            margin: auto;
+            margin-top: 100px;
+
+        }
+
+        .imgs img {
+
+            position: relative;
+            width: 190px;
+            height: 240px;
+            margin-top: 5px;
+            margin-left: 40px;
+        }
+        @media only screen and (max-width:768px) {
+            * {
+                animation-name: none;
+                transition: none;
+            }
+            .anima1 span {
+                font-size: 22px;
+                margin-left: 10%;
+            }
+            .imgs {
+                width: 100%;
+                margin-left: 15%;
+                margin-top: 20%;
+            }
+            .imgs img {
+                width: 150px;
+                height: 130px;
+                margin-left: 0;
+            }
+            .lin1,.lin2 {
+                display: none;
+            }
+            #st1 {
+                font-size: 20px;
+                margin-left: 33%;
+            }
+        } 
+
+        .navbar-collapse ul li:hover .prosection ul li:last-child{
+           border-bottom: none;
+                
+        }
+        .mainmenu ul li:hover .prosection ul li a:hover{
+             color: turquoise
+               
+        } 
+        .npful li a:hover
+        {
+              color: turquoise;
+        }
+
+        .GreyHeader{
+        background-color: transparent;
+        }
+
+        .FireBrickRed {
+        background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+        <div style="display: none;">
+                <img src="http://www.ctvisit.com/sites/default/files/valentinos%20pizza.jpg">
+                <img src="https://wallpaperaccess.com/full/767277.jpg">
+                <img src="pasta.jpg">
+                <img src="https://www.ubackground.com/_ph/9/721542140.jpg">
+                <img src="https://images5.alphacoders.com/426/426029.jpg">
+                <img src="oreo.png">
+        
+            </div>
+    
+        <header class="top-navbar">
+                <nav class="navbar navbar-expand-lg navbar-light fixed-top GreyHeader" id="mynav">
+                   <div class="container">
+                      
+                       <h2 style="color: red; font-size: 40px;font-weight: 800;">FoodZone&nbsp<i class="fa fa-opencart" aria-hidden="true"></i>
+                       </h2>
+                       <button class="navbar-toggler" type="button" data-toggle="collapse"
+                           data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                           aria-label="Toggle navigation">
+                           <span class="navbar-toggler-icon"></span>
+                       </button>
+       
+                       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                           <ul class="navbar-nav ml-auto">
+                               <li class="nav-item ">
+                                   <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i>
+                                    Home </a>
+                               </li>
+                               <li class="nav-item">
+                                   <a class="nav-link" href="#aboutus"><i class="fa fa-users" aria-hidden="true"></i>
+                                    About Us</a>
+                               </li>
+                               <li class="nav-item">
+                                    <a class="nav-link" href="#banner">
+
+                                            <i class="fa fa-cutlery" aria-hidden="true"></i>
+                                            
+                                     Menu</a>
+                                </li>
+                               <li class="nav-item">
+                                   <a class="nav-link" href="login.html"><i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                    Login</a>
+                               </li>
+                               <li class="nav-item">
+                                   <a class="nav-link profile" href="signup.html"><i class="fa fa-sign-in" aria-hidden="true"></i>
+                                    Signup </a>
+                                   
+                               </li>
+                           </ul>
+       
+                       </div>
+       
+                   </div>
+               </nav>
+           </header>
+  
+    <section class="header hdd1" id="head1"
+        style="background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('http://www.ctvisit.com/sites/default/files/valentinos%20pizza.jpg')">
+
+        <div class="one">
+            <h1 class="txt1" style=" zoom: 200%;font-size: 55px;font-weight: 700;font-family: sans-serif;">Chase the Flavours</h1>
+            <p class="txt2" style="zoom: 200%;font-weight: 700;font-family: sans-serif;">We speak the good food language
+                </p>
+        </div>
+        <br>
+    </section>
+
+    <div  class="anima1 animatedParent animateOnce oline">
+        <span class="slower animated fadeInUp box">Ordering food was never so easy</span>
+        <br><br><br>
+        <div class="lin1 slow animated fadeInDown box"></div>
+        <pre id="st1" class="slower animated fadeInUp box delay-500">Just 4 steps follow</pre>
+        <div class="lin2 slow animated fadeInDown box"></div>
+        <div class="imgs">
+            <img class="animated fadeInLeft box delay-500" id="one"
+                src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/one.png">
+            <img class="animated fadeInLeft box delay-1000" id="one1"
+                src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/two.png">
+            <img class="animated fadeInLeft box delay-1500" id="one2"
+                src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/thrww.png">
+            <img class="animated fadeInLeft box delay-2000" id="one3"
+                src="https://raw.githubusercontent.com/THE-VR7/Food-ordering-web-application/master/images/four.png">
+        </div>
+    </div>
+
+
+    <section class="features">
+        <h1 style="text-align: center; padding-bottom: 30px; font-family: cursive;font-weight: 700;">Our handpicked dishes for you</h1>
+        <div  class="container">
+            <div  class="row">
+                <div class="col-sm-3">
+                    <div class="feature-box">
+                        <div class="feature-img">
+                            <img style="height:175px"
+                                src="https://pixelz.cc/wp-content/uploads/2018/10/pizza-uhd-4k-wallpaper.jpg">
+                        </div>
+                     <a href="/login" style="text-decoration: none;">   <span class="price">350 INR</span> &nbsp
+                        <span class="ratings">
+                           
+
+                        </span>
+                        <div class="placename">
+                            <h3> Margherita Pizza</h3>
+                        </div>
+                        
+                    </a>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="feature-box">
+                        <div class="feature-img">
+                            <img style="height:175px"
+                                src="https://images2.alphacoders.com/901/thumb-350-901414.jpg">
+                        </div>
+                        <a href="/login" style="text-decoration: none;">   <span class="price">50 INR</span> &nbsp
+                        <span class="ratings">
+                        
+
+
+                        </span>
+                        <div  class="placename">
+                            <h3>Mc Aloo Tikki</h3>
+                        </div>
+                       
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="feature-box">
+                        <div class="feature-img">
+                            <img style="height: 175px;"
+                                src="http://www.cooktube.in/wp-content/uploads/2018/03/masala-dosa.jpg">
+                        </div>
+                        <a href="/login" style="text-decoration: none;">  <span class="price">180 INR</span> &nbsp
+                        <span class="ratings">
+                         
+
+
+
+                        </span>
+                        <div class="placename">
+                            <h3>Masala Dosa</h3>
+                        </div>
+                       
+                    </a>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="feature-box">
+                        <div class="feature-img">
+                            <img style="height: 175px;"
+                                src="https://www.rasoimenu.com/wp-content/uploads/2019/06/Baked-Chicken-and-Mushroom-Recipe.jpg">
+                        </div>
+                        <a href="/login" style="text-decoration: none;">  <span class="price">200 INR</span> &nbsp
+                        <span class="ratings">
+                         
+
+
+
+                        </span>
+                        <div class="placename">
+                            <h3>Mushroom</h3>
+                        </div>
+                       
+                    </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="feature-box">
+                        <div class="feature-img">
+                            <img style="height: 175px;"
+                                src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2009/6/12/0/TM1022_30666_s4x3.jpg.rend.hgtvcom.616.462.suffix/1547582576993.jpeg">
+                        </div>
+                        <a href="/login" style="text-decoration: none;"> <span class="price">250 INR</span> &nbsp
+                        <span class="ratings">
+                          
+
+
+                        </span>
+                        <div class="placename">
+                            <h3>Cheese Pasta</h3>
+                        </div>
+                      
+                    </a>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="feature-box">
+                        <div class="feature-img">
+                            <img style="height: 175px;"
+                                src="http://maunikagowardhan.co.uk/wp-content/uploads/2016/09/Matar-Paneer-2-700x467.jpg">
+                        </div>
+                        <a href="/login" style="text-decoration: none;"><span class="price">200 INR</span> &nbsp
+                        <span class="ratings">
+                        
+
+
+
+                        </span>
+                        <div class="placename">
+                            <h3>Matar Paneer</h3>
+                        </div>
+                      
+                    </a>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="feature-box">
+                        <div class="feature-img">
+                            <img src="https://www.carolinescooking.com/wp-content/uploads/2016/04/green-Greek-eggplant-spinach-grilled-cheese-photo.jpg"
+                                style="height: 175px;">
+                        </div>
+                        <a href="/login" style="text-decoration: none;">  <span class="price">120 INR</span> &nbsp
+                        <span class="ratings">
+                         
+
+
+
+                        </span>
+                        <div class="placename">
+                            <h3>Grilled sandwich</h3>
+                        </div>
+                      
+                    </a>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="feature-box">
+                        <div class="feature-img">
+                            <img src="https://thumbs.dreamstime.com/b/indian-dal-traditional-indian-soup-lentils-indian-dal-food-traditional-indian-soup-lentils-indian-dhal-spicy-curry-bowl-indian-139348337.jpg"
+                                style="height: 175px;">
+                        </div>
+                        <a href="/login" style="text-decoration: none;">  <span class="price">170 INR</span> &nbsp
+                        <span class="ratings">
+                         
+
+
+
+                        </span>
+                        <div class="placename">
+                            <h3>Dal Fry</h3>
+                        </div>
+                      
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="banner" class="banner">
+        <div  class="banner-highlights">
+            <h1 style="text-align: center; color: white; margin-top: -170px; font-size: 60px; font-family: cursive;" >Our Menu</h1>
+            <br>
+            <div  class="container">
+                <div  class="row">
+                   <a href="Pizza.html" style="text-decoration: none;"> <div class="col-sm-3">
+                        <div class="feature-box">
+                            <div class="feature-img">
+                                <img style="height:175px"
+                                    src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-keto-pizza-073-1544039876.jpg?crop=1.00xw:0.752xh;0.00160xw,0.0841xh&resize=1200:*">
+                            </div>
+                         <a href="/login" style="text-decoration: none;">   
+                           
+                            <div class="foodname">
+                                <h3>Pizza</h3>
+                            </div>
+                            
+                        </a>
+                        </div>
+                    </div>
+                </a>
+                <a href="Burger.html" style="text-decoration: none;"> <div class="col-sm-3">
+                        <div class="feature-box">
+                            <div class="feature-img">
+                                <img style="height:175px"
+                                    src="https://media1.s-nbcnews.com/j/newscms/2019_21/2870431/190524-classic-american-cheeseburger-ew-207p_d9270c5c545b30ea094084c7f2342eb4.fit-760w.jpg">
+                            </div>
+                            <a href="/login" style="text-decoration: none;">   
+                            <div  class="foodname">
+                                <h3>Burger</h3>
+                            </div>
+                           
+                            </a>
+                        </div>
+                    </div>
+                    </a>
+                    <a href="Dosa.html" style="text-decoration: none;"> <div class="col-sm-3">
+                        <div class="feature-box">
+                            <div class="feature-img">
+                                <img style="height: 175px;"
+                                    src="https://files2.hungryforever.com/wp-content/uploads/2015/04/Featured-image-masala-dosa-recipe.jpg">
+                            </div>
+                            <a href="/login" style="text-decoration: none;">  
+                            <div class="foodname">
+                                <h3>Dosa</h3>
+                            </div>
+                           
+                        </a>
+                        </div>
+                    </div>
+                    </a>
+                    <a href="Mushroom.html" style="text-decoration: none;"> <div class="col-sm-3">
+                        <div class="feature-box">
+                            <div class="feature-img">
+                                <img style="height: 175px;"
+                                    src="https://skinnyms.com/wp-content/uploads/2018/01/Broccoli-and-Mushroom-Stir-Fry-Vegan-Stir-Fry-Recipes-750x498.jpg">
+                            </div>
+                            <a href="/login" style="text-decoration: none;"> 
+                            <div class="foodname">
+                                <h3>Mushroom</h3>
+                            </div>
+                           
+                        </a>
+                        </div>
+                    </div>
+                    </a>
+    
+                </div>
+                <div  class="row">
+                    <a href="Pasta.html" style="text-decoration: none;">  <div class="col-sm-3">
+                        <div class="feature-box">
+                            <div class="feature-img">
+                                <img style="height:175px"
+                                    src="https://www.seriouseats.com/2019/08/20190809-burst-tomato-xo-pasta-vicky-wasik21--1500x1125.jpg">
+                            </div>
+                         <a href="/login" style="text-decoration: none;">   
+                            <div class="foodname">
+                                <h3> Pasta</h3>
+                            </div>
+                            
+                        </a>
+                        </div>
+                    </div>
+                    </a>
+                    <a href="Paneer.html" style="text-decoration: none;"> <div class="col-sm-3">
+                        <div class="feature-box">
+                            <div class="feature-img">
+                                <img style="height:175px"
+                                    src="https://www.archanaskitchen.com/images/archanaskitchen/1-Author/Neha_Mathur/Achari_Paneer_Tikka_Recipe_Party_Food.JPG">
+                            </div>
+                            <a href="/login" style="text-decoration: none;">   
+                            <div  class="foodname">
+                                <h3>Paneer</h3>
+                            </div>
+                           
+                            </a>
+                        </div>
+                    </div>
+                    </a>
+                    <a href="Sandwich.html" style="text-decoration: none;">  <div class="col-sm-3">
+                        <div class="feature-box">
+                            <div class="feature-img">
+                                <img style="height: 175px;"
+                                    src="https://realfood.tesco.com/media/images/RFO-1400x919-Pesto-club-sandwich-49fdd81d-d37b-46f1-a998-0309a2345baf-0-1400x919.jpg">
+                            </div>
+                            <a href="/login" style="text-decoration: none;">  
+                            <div class="foodname">
+                                <h3>Sandwiches</h3>
+                            </div>
+                           
+                        </a>
+                        </div>
+                    </div>
+                    </a>
+                    <a href="Dal.html" style="text-decoration: none;"><div class="col-sm-3">
+                        <div class="feature-box">
+                            <div class="feature-img">
+                                <img style="height: 175px;"
+                                    src="https://www.cookwithmanali.com/wp-content/uploads/2014/08/Dal-Tadka-500x500.jpg">
+                            </div>
+                            <a href="/login" style="text-decoration: none;">  
+                            <div class="foodname">
+                                <h3>Dal</h3>
+                            </div>
+                           
+                        </a>
+                        </div>
+                    </div>
+    </a>
+                </div>
+                </div>
+                
+        </div>
+
+    </section>
+
+    <section class="users-feedback">
+        <h1 style="text-align: center;font-family: sans-serif;font-weight: 700;">Costumers Reviews</h1>
+        <div class="container">
+            <div  class="row">
+                <div class="col-md-4">
+                    <div class="users-review">
+                        <p>Good food with good service
+            
+                        </p>
+                        <h5>Sanket Goyal</h5>
+                        <small>Jaipur</small>
+                    </div>
+                    <img
+                        src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                </div>
+
+                <div class="col-md-4">
+                    <div class="users-review">
+                        <p>Good food with good service
+                        </p>
+                        <h5>Shivam Mehrotra</h5>
+                        <small>Agra</small>
+                    </div>
+                    <img src="https://i.pinimg.com/originals/62/03/8e/62038ed2eee55edc230ba7604ed24b41.jpg">
+                </div>
+
+                <div class="col-md-4">
+                    <div class="users-review">
+                        <p>Good food with good service.
+                        </p>
+                        <h5>Ram Sharma</h5>
+                        <small>New Delhi</small>
+                    </div>
+                    <img
+                        src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="aboutus" class="aboutus">
+
+
+        <div class="info">
+                <h2 style="color: red; font-size: 40px;font-weight: 800;">FoodZone&nbsp<i class="fa fa-opencart" aria-hidden="true"></i>
+                </h2>
+            <br>
+            <br>
+            <div style="color:grey; font-family:Verdana, Geneva, Tahoma, sans-serif; line-height: 10px;">
+                <p>FoodZone,
+
+                </p>
+                <p> GLA University</p>
+                <p>Mathura, UP</p>
+                <p>Uttar Pradesh 281001</p>
+            </div>
+            <br>
+
+
+            <p class="social" style="color: grey; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 20px;">
+                Follow Us &nbsp
+                <a href="#" style="color: white;"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                &nbsp <a href="#" style="color: white;"><i class="fa fa-instagram" aria-hidden="true"></i></a> &nbsp <a
+                    style="color: white;" href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+
+
+            </p>
+
+        </div>
+
+        <div class="uselik">
+            <p style="color: white; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 20px;">Useful Links</p>
+
+            <ul style="list-style: none; ">
+                    <li ><a  style="text-decoration: none;" href="/last/#FAQ">FAQ</a></li>
+                
+                    <li><a  style="text-decoration: none;" href="/last/#TAC">Terms and Condition</a></li>
+                    <li><a style="text-decoration: none;" href="/last/#PP">Privacy Policy</a></li>
+                    <li><a  style="text-decoration: none;" href="/last/#TOU">Terms of Use</a></li>
+                    <li><a  style="text-decoration: none;" href="/last/#RP">Refund Policy</a></li>
+            </ul>
+
+        </div>
+
+
+
+        <div class="gtch">
+
+            <p style="color: white; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 20px;">Get in touch</p>
+            <p style="color: grey; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px;"><i
+                    class="fa fa-mobile" aria-hidden="true"></i>&nbsp +91 9166621138 | 9997140952</p>
+            <p style="color: grey; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px;"><i
+                    class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp sanket.goyal_cs17@gla.ac.in
+            </p>
+            <p style="color: grey; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px;"><i
+                    class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp shivam.mehrotra_cs17@gla.ac.in
+            </p>
+           
+
+        </div>
+
+    </section>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(function() {
+       var header = $(".GreyHeader");
+       $(document).scroll(function() {    
+           var scroll = $(document).scrollTop();
+           console.log(scroll);
+           if (scroll >= 3300)
+           {
+               header.removeClass("FireBrickRed ").addClass('GreyHeader');
+           }
+           else if (scroll >= 2750)
+           {
+               header.removeClass('GreyHeader').addClass("FireBrickRed ");
+           }
+        //    else if (scroll >= 2100)
+        //    {
+        //        header.removeClass("FireBrickRed ").addClass('GreyHeader');
+        //    }
+           else if (scroll >= 700) {
+               header.removeClass('GreyHeader').addClass("FireBrickRed ");
+           }
+           else {
+               header.removeClass("FireBrickRed ").addClass('GreyHeader');
+           }
+       });
+   });</script>
+
+</body>
+
+</html>
